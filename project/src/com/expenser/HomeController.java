@@ -10,17 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.expenser.common.Constants;
 
 /**
- * Class LoginController displays the login page
+ * Class HomeController displays the user's home page
  *
  * @author gaurav
  */
-public class LoginController extends HttpServlet {
+public class HomeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public LoginController() {
+	public HomeController() {
 		super();
 	}
 
@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher(Constants.PATH_CONTENT + "/login.jsp").forward(request, response);
+		request.getRequestDispatcher(Constants.PATH_CONTENT + "/home.jsp").forward(request, response);
 	}
 
 }
