@@ -1,0 +1,166 @@
+html{
+    background-color: #FFFFFF;
+}
+
+body{
+    background-color: #000000;
+    opacity: 0.9;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header,footer{
+    width: 50%;
+    height: 100px;
+    margin: auto;
+    min-width: 1024px;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+h1{
+    float: left;
+    padding-top: 25px;
+    padding-left: 20px;
+    font-size: 3em;  
+}
+
+span{
+    color: #c231b2;
+}
+
+nav{
+    float: right;
+    padding-top: 25px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+nav ul li{
+    display: inline;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+nav ul li:hover{
+    background-color: #c231b2;
+    color: #000000;
+}
+
+#mainContent{
+    display: table;
+    width: 50%;
+    margin: auto;
+    min-width: 1024px;
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+h2{
+    display: block;
+    text-align: center;
+    margin: 10px;
+    padding-bottom: 5px;
+    font-size: 2.0em;
+    border-bottom: 2px solid #c231b2;
+}
+
+.errorBox{
+    text-align:center;
+    font-size: 0.8em;
+    color: #FF0000;
+}
+
+.messageBox{
+    font-size: 1.5em;
+    color: #c231b2;
+}
+
+footer a{
+    text-decoration: none;
+    color: #c231b2;
+}
+
+footer{
+    height : 50px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* index.css */
+input{
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+}
+
+input[type="submit"]{
+    width: 150px;
+}
+
+form{
+    text-align: center;
+}
+
+form a{
+    padding: 5px;
+}
+
+/* dashboard.css */
+#container{
+    display: table;
+    width: 50%;
+    margin: auto;
+}
+
+.leftColumn,.rightColumn{
+    text-align: center;
+    display: table-cell;
+    width: 40%;
+}
+
+.totalAmount{
+    padding: 10px;
+    margin: 10px;
+    background-color: #F8E0F7;
+    border: 2px solid #c231b2;
+}
+
+.amount{
+    display: block;
+    font-size: 3em;    
+}
+
+.Owe{
+    color: #FF0000;
+}
+
+.Get{
+    color: #3ADF00;
+}
+
+.expenseShareList li{
+    padding: 10px;
+    margin: 10px;
+    background-color: #F8E0F7;
+}
+
+/* About Us */
+#container img{
+    float: left;
+    margin-right: 8px;
+}
+
+h4{
+    color: #c231b2;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.leftColumn p,.rightColumn p{
+    font-size: 0.9em;
+    padding: 10px 20px 0px 0px;
+    text-align: justify;
+    word-spacing: 1px;
+}
