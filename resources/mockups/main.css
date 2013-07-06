@@ -1,10 +1,4 @@
-html{
-    background-color: #FFFFFF;
-}
-
 body{
-    background-color: #000000;
-    opacity: 0.9;
     width: 100%;
     overflow-x: hidden;
 }
@@ -14,8 +8,6 @@ header,footer{
     height: 100px;
     margin: auto;
     min-width: 1024px;
-    background-color: #000000;
-    color: #FFFFFF;
 }
 
 h1{
@@ -23,10 +15,6 @@ h1{
     padding-top: 25px;
     padding-left: 20px;
     font-size: 3em;  
-}
-
-span{
-    color: #c231b2;
 }
 
 nav{
@@ -43,17 +31,11 @@ nav ul li{
     border-radius: 3px;
 }
 
-nav ul li:hover{
-    background-color: #c231b2;
-    color: #000000;
-}
-
 #mainContent{
     display: table;
     width: 50%;
     margin: auto;
     min-width: 1024px;
-    background-color: #FFFFFF;
     padding: 20px;
 }
 
@@ -63,23 +45,19 @@ h2{
     margin: 10px;
     padding-bottom: 5px;
     font-size: 2.0em;
-    border-bottom: 2px solid #c231b2;
 }
 
 .errorBox{
     text-align:center;
     font-size: 0.8em;
-    color: #FF0000;
 }
 
 .messageBox{
     font-size: 1.5em;
-    color: #c231b2;
 }
 
 footer a{
     text-decoration: none;
-    color: #c231b2;
 }
 
 footer{
@@ -123,8 +101,6 @@ form a{
 .totalAmount{
     padding: 10px;
     margin: 10px;
-    background-color: #F8E0F7;
-    border: 2px solid #c231b2;
 }
 
 .amount{
@@ -132,18 +108,9 @@ form a{
     font-size: 3em;    
 }
 
-.Owe{
-    color: #FF0000;
-}
-
-.Get{
-    color: #3ADF00;
-}
-
 .expenseShareList li{
     padding: 10px;
     margin: 10px;
-    background-color: #F8E0F7;
 }
 
 /* About Us */
@@ -153,14 +120,20 @@ form a{
 }
 
 h4{
-    color: #c231b2;
     font-size: 1.2em;
     text-align: left;
 }
 
-.leftColumn p,.rightColumn p{
+.leftColumn p.about,.rightColumn p.about{
     font-size: 0.9em;
     padding: 10px 20px 0px 0px;
     text-align: justify;
     word-spacing: 1px;
 }
+
+/* All expenses */
+table{
+    width: 100%;
+}
+
+
