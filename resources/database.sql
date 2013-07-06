@@ -10,15 +10,15 @@ create database expenser;
 
 use expenser;
 
-create table user( userId int not null auto_increment, userEmail varchar(25), userLogin varchar(15) not null, userPassword varchar(15) not null, userFullName char(30), primary key(userId) )engine=InnoDB;
+create table user( userId int not null auto_increment, userEmail varchar(25), userLogin varchar(15) not null, userPassword varchar(25) not null, userFullName char(30), primary key(userId) )engine=InnoDB;
 
 create table expenses( expenseId int not null auto_increment, expenseAmt int not null default 0, expenseBy int not null, expenseTag varchar(15), expenseDesc varchar(30), expenseType int(1) default 1, primary key(expenseId), foreign key(expenseBy) references user(userId) )engine=InnoDB;
 
 create table sharedetails( expenseId int(11), expenseSharedBy int(11), expenseShareAmt int(11), foreign key(expenseId) references expenses(expenseId), foreign key(expenseSharedBy) references user(userId) )engine=InnoDB;
 
-insert into user(userLogin,userEmail,userPassword,userFullName) values('rahul86','rgodse@csulb.edu','abc123','Rahul Godse');
+insert into user(userLogin,userEmail,userPassword,userFullName) values('rgodse','rgodse@csulb.edu','abc123','Rahul Godse');
 insert into user(userLogin,userEmail,userPassword,userFullName) values('gjain','gjain@csulb.edu','abc123','Gaurav Jain');
-insert into user(userLogin,userEmail,userPassword,userFullName) values('dipeshlj','djain@csulb.edu','abc123','Dipesh Jain');
+insert into user(userLogin,userEmail,userPassword,userFullName) values('dipeshj','djain@csulb.edu','abc123','Dipesh Jain');
 insert into user(userLogin,userEmail,userPassword,userFullName) values('ankitd','adhebar@csulb.edu','abc123','Ankit Dhebar');
 
 insert into expenses(expenseAmt,expenseBy,expenseTag,expenseDesc,expenseType)values(40,1,'party','friscos',1);
