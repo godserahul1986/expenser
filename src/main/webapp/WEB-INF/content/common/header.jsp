@@ -12,11 +12,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>
 			<%
-				out.write(userFullname);
-			%> | Expenser
+				if(userFullname != null){
+					out.write(userFullname + " | ");
+				}
+			%>Expenser
 		</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/query.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<header>
 		<h1>Expenser</h1>
