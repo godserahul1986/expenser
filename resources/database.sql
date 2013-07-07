@@ -53,15 +53,11 @@ insert into expense(expense_amount,expense_by,expense_tag,expense_desc,expense_s
 insert into expensedetail values(1,2,10);
 insert into expensedetail values(1,3,10);
 insert into expensedetail values(1,4,10);
-insert into expensedetail values(1,1,10);
 insert into expensedetail values(2,1,5);
 insert into expensedetail values(2,2,5);
-insert into expensedetail values(2,3,5);
 insert into expensedetail values(2,4,5);
 insert into expensedetail values(3,1,20);
 insert into expensedetail values(3,2,20);
 insert into expensedetail values(3,3,20);
-insert into expensedetail values(3,4,20);
 insert into expensedetail values(4,1,10);
-insert into expensedetail values(4,2,30);
 */

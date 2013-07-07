@@ -16,16 +16,31 @@ header,footer,#mainContent{
 }
 
 h1{
-    text-align: center;
-    padding: 40px;
+    float: left;
+    padding: 20px 0px;
     font-size: 3em;
     font-weight: 700;
 }
 
+h1+a{
+	float: right;
+	font-size: 0.7em;
+	margin-top: 60px;
+	margin-right: 5px;
+	color: #FFFFFF;
+}
+
 nav,footer{
+    clear: both;
     border-radius: 5px;
     background-color: #E53938;
     text-align: center;
+    overflow: auto;
+}
+
+nav ul{
+	float: left;
+	margin-left: 10px;
 }
 
 nav ul li{
@@ -48,16 +63,73 @@ nav ul li a:hover{
     background-color: #F1F1F1;
     color: #000000;
     border-radius: 5px;
+
+    /* Internet Explorer 10 */
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
 }
 
 #mainContent p{
-    z-index: 2;
     font-size: 0.9em;
     padding: 10px;
+}
+
+#leftColumn,#rightColumn{
+    display: table-cell;
+    width: 350px;
+    text-align: center;
+    padding: 5px;
+}
+
+#leftColumn{
+    border-right: 1px dotted #E53938;
+}
+
+h3{
+    font-weight: 600;
+    color: #E53938;
+    padding: 5px;
 }
 
 footer{
 	margin-top: 20px;
 	padding: 5px 0px;
     font-size: 0.7em;
+}
+
+/* index.html */
+input{
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+}
+
+input[type="submit"]{
+    width: 150px;
+}
+
+form{
+    text-align: center;
+}
+
+form a{
+    color: #E53938;
+    font-size: 0.6em;
+    padding: 5px;
 }

@@ -30,14 +30,14 @@
     <url-pattern>/authenticate.htm</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description>Display user's home page</description>
-    <display-name>HomeController</display-name>
-    <servlet-name>HomeController</servlet-name>
-    <servlet-class>com.expenser.HomeController</servlet-class>
+    <description>Display user's dashboard</description>
+    <display-name>DashboardController</display-name>
+    <servlet-name>DashboardController</servlet-name>
+    <servlet-class>com.expenser.DashboardController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>HomeController</servlet-name>
-    <url-pattern>/home.htm</url-pattern>
+    <servlet-name>DashboardController</servlet-name>
+    <url-pattern>/dashboard.htm</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -68,5 +68,15 @@
   <servlet-mapping>
     <servlet-name>AddExpenseController</servlet-name>
     <url-pattern>/addexpense.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AllExpensesController</display-name>
+    <servlet-name>AllExpensesController</servlet-name>
+    <servlet-class>com.expenser.AllExpensesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllExpensesController</servlet-name>
+    <url-pattern>/allexpenses.htm</url-pattern>
   </servlet-mapping>
 </web-app>
