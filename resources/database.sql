@@ -39,7 +39,6 @@ create table expensedetail(
 	primary key(expense_id,expense_shared_by)
 );
 
-/*
 insert into user(username,passwd,email,fullname) values('rgodse','abc123','rgodse@csulb.edu','Rahul Godse');
 insert into user(username,passwd,email,fullname) values('gjain','abc123','gjain@csulb.edu','Gaurav Jain');
 insert into user(username,passwd,email,fullname) values('dipeshj','abc123','djain@csulb.edu','Dipesh Jain');
@@ -64,4 +63,4 @@ insert into expensedetail values(3,3,20);
 insert into expensedetail values(3,4,20);
 insert into expensedetail values(4,1,10);
 insert into expensedetail values(4,2,30);
-*/
+
