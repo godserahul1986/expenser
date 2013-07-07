@@ -52,7 +52,7 @@ public class UserAuthentication extends HttpServlet {
 					request.getSession().setAttribute("username", rs.getString("username"));
 					request.getSession().setAttribute("userEmail", rs.getString("email"));
 					request.getSession().setAttribute("userFullname", rs.getString("fullname"));
-					response.sendRedirect("home.htm");
+					response.sendRedirect("dashboard.htm");
 				} else {
 					request.setAttribute("error", "Unknown login, please try again.");
 					request.getRequestDispatcher(Constants.PATH_CONTENT + "/login.jsp").forward(request, response);
