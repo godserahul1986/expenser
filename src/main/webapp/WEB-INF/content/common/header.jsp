@@ -1,15 +1,17 @@
 	<header>
-		<h1>expen<span>$</span>er</h1>
+		<h1>Expenser</h1>
 		<nav>
 			<ul>
 				<% if(userId != null) { %>
-				<li>Dashboard</li>
-				<li>Add Expense</li>
-				<li>All Expenses</li>
-				<li>Add Friend</li>
-				<li>Settings</li>
+				<li><a href="dashboard.htm">Dashboard</a></li>
+				<li><a href="addexpense.htm">Add Expense</a></li>
+				<li><a href="allexpenses.htm">All Expenses</a></li>
+				<li><a href="addfriend.htm">Add Friend</a></li>
+				<li><a href="settings.htm">Settings</a></li>
 				<li><a href="logout.htm">Logout</a></li>
 				<% } %>
 			</ul>
 		</nav>
 	</header>
+	<body>
+		<div id="mainContent">
