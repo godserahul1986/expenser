@@ -1,4 +1,4 @@
-use app;
+use expenser;
 
 -- drop table if exists expensedetail;
 -- drop table if exists expense;
@@ -59,9 +59,4 @@ insert into expensedetail values(3,1,20);
 insert into expensedetail values(3,2,20);
 insert into expensedetail values(3,3,20);
 insert into expensedetail values(4,1,10);
-<<<<<<< HEAD
 insert into expensedetail values(4,2,30);
-
-=======
-*/
->>>>>>> refs/remotes/origin/master
