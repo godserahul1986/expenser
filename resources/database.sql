@@ -1,8 +1,8 @@
-use expenser;
+use app;
 
-drop table if exists expensedetail;
-drop table if exists expense;
-drop table if exists user;
+-- drop table if exists expensedetail;
+-- drop table if exists expense;
+-- drop table if exists user;
 
 -- drop database if exists expenser;
 -- create database expenser;

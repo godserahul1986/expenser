@@ -1,8 +1,12 @@
 package com.expenser.db;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 /**
  * Class handles the database connection
@@ -15,12 +19,18 @@ public class Database {
 	public static Connection getConnection() {
 		Connection connection = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenser", "expenser", "exp3ns3r");
-		} catch (ClassNotFoundException e) {
-			System.err.println("Database connection exception, " + e.getMessage());
+			InitialContext ic = new InitialContext();
+			Context xmlContext = (Context) ic.lookup("java:comp/env");
+			DataSource dataSource = (DataSource) xmlContext.lookup("jdbc/MysqlDS");
+			connection = dataSource.getConnection();
+
+			// old school style
+			//Class.forName("com.mysql.jdbc.Driver");
+			//connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenser", "expenser", "exp3ns3r");
 		} catch (SQLException e) {
-			System.err.println("Database connection exception, " + e.getMessage());
+			System.err.println("Database connection error (SQLException), " + e.getMessage());
+		} catch (NamingException e) {
+			System.err.println("Database connection error (NamingException), " + e.getMessage());
 		}
 
 		return connection;

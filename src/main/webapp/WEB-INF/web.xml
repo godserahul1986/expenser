@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<web-app version="3.0"
+    	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	 xmlns="http://java.sun.com/xml/ns/javaee"
+    	 xmlns:web="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    	 id="WebApp_ID"
+		 metadata-complete="false">
+
   <display-name>Expenser</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -30,14 +37,14 @@
     <url-pattern>/authenticate.htm</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description>Display user's home page</description>
-    <display-name>HomeController</display-name>
-    <servlet-name>HomeController</servlet-name>
-    <servlet-class>com.expenser.HomeController</servlet-class>
+    <description>Display user's dashboard</description>
+    <display-name>DashboardController</display-name>
+    <servlet-name>DashboardController</servlet-name>
+    <servlet-class>com.expenser.DashboardController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>HomeController</servlet-name>
-    <url-pattern>/home.htm</url-pattern>
+    <servlet-name>DashboardController</servlet-name>
+    <url-pattern>/dashboard.htm</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -68,5 +75,15 @@
   <servlet-mapping>
     <servlet-name>AddExpenseController</servlet-name>
     <url-pattern>/addexpense.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AllExpensesController</display-name>
+    <servlet-name>AllExpensesController</servlet-name>
+    <servlet-class>com.expenser.AllExpensesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllExpensesController</servlet-name>
+    <url-pattern>/allexpenses.htm</url-pattern>
   </servlet-mapping>
 </web-app>
