@@ -3,7 +3,6 @@ package com.expenser;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -15,17 +14,17 @@ import com.expenser.common.Constants;
 import com.expenser.db.Database;
 
 /**
- * Class UserAuthentication handles username/password authentication
+ * Class UserRegister handles user registration
  *
  * @author gaurav
  */
-public class UserAuthentication extends HttpServlet {
+public class UserRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public UserAuthentication() {
+	public UserRegister() {
 		super();
 	}
 
@@ -34,29 +33,30 @@ public class UserAuthentication extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String fullname = request.getParameter("fullname");
+		String email = request.getParameter("email");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
+		String sqlInsert = "INSERT INTO user(username,passwd,email,fullname) VALUES (?,?,?,?)";
+
 		Connection connection = null;
 		PreparedStatement ps = null;
-		ResultSet rs = null;
 		try {
 			connection = Database.getConnection();
-			ps = connection.prepareStatement("SELECT * FROM user WHERE username = ?");
+			ps = connection.prepareStatement(sqlInsert);
 			ps.setString(1, username);
-			rs = ps.executeQuery();
+			ps.setString(2, password);
+			ps.setString(3, email);
+			ps.setString(4, fullname);
+			int result = ps.executeUpdate();
 
-			while (rs.next()) {
-				if (rs.getString("username").equals(username) && rs.getString("passwd").equals(password)) {
-					request.getSession().setAttribute("userId", rs.getString("id"));
-					request.getSession().setAttribute("username", rs.getString("username"));
-					request.getSession().setAttribute("userEmail", rs.getString("email"));
-					request.getSession().setAttribute("userFullname", rs.getString("fullname"));
-					response.sendRedirect("home.htm");
-				} else {
-					request.setAttribute("error", "Unknown login, please try again.");
-					request.getRequestDispatcher(Constants.PATH_CONTENT + "/login.jsp").forward(request, response);
-				}
+			if (result > 0) {
+				request.setAttribute("status", "Registration Successful!");
+				request.getRequestDispatcher(Constants.PATH_CONTENT + "/login.jsp").forward(request, response);
+			} else {
+				request.setAttribute("status", "Error occurred, please try again.");
+				request.getRequestDispatcher(Constants.PATH_CONTENT + "/login.jsp").forward(request, response);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -66,8 +66,8 @@ public class UserAuthentication extends HttpServlet {
 					connection.close();
 				if (ps != null)
 					ps.close();
-				if (rs != null)
-					rs.close();
+				if (ps != null)
+					ps.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

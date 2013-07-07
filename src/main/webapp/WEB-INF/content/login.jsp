@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+	String userId = (String) request.getSession().getAttribute("userId");
 	String error = (String) request.getAttribute("error");
+	String status = (String) request.getAttribute("status");
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,35 +13,31 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<header>
-		<h1>expen<span>$</span>er</h1>
-		<nav>
-			<ul>
-				<li>Dashboard</li>
-				<li>Add Expense</li>
-				<li>All Expenses</li>
-				<li>Add Friend</li>
-				<li>Settings</li>
-				<li>Help</li>
-				<li>Log Out</li>
-			</ul>
-		</nav>
-	</header>
+	<%@ include file="/WEB-INF/content/common/header.jsp" %>
 
 	<div id="mainContent">
 		<h2>Login</h2>
-		<p id="messageBox"></p>
+		<p class="errorBox"><% if(error != null && !error.isEmpty()) { out.write(error); } %></p>
 		<form method="post" action="authenticate.htm">
-			<input type="text" name="username" value="rahul" placeholder="Username/Email" required>
-			<input type="password" name="password" value="rahul" placeholder="Password" required>
-			<% if(error != null && !error.isEmpty()) { %><br /><span style="color:red; font-size:12px;"><% out.write(error); %></span><% } %>
+			<input type="text" name="username" value="rgodse" placeholder="Username/Email" required>
+			<input type="password" name="password" value="abc123" placeholder="Password" required>
 			<input type="submit" value="Login">
-			<a href="#">Forgot password?</a><a href="#">New user?</a>
+			<a href="#">Forgot password?</a>
 		</form>
+
+		<br /><br />
+
+		 <h2>Register</h2>
+         <p class="errorBox"><% if(status != null && !status.isEmpty()) { out.write(status); } %></p>
+         <form method="post" action="register.htm">
+             <input type="text" name="fullname" value="" placeholder="Full name" required>
+             <input type="email" name="email" value="" placeholder="Email" required>
+             <input type="text" name="username" value="" min=6 placeholder="Username" required>
+             <input type="password" name="password" value="" placeholder="Password" required>
+             <input type="submit" value="Register">
+         </form>
 	</div>
 
-	<footer>
-		<p>This project is a demo project made by <a href="#">Gaurav Jain</a> and <a href="#">Rahulkumar Godse</a></p>
-	</footer>
+	<%@ include file="/WEB-INF/content/common/footer.jsp" %>
 </body>
 </html>

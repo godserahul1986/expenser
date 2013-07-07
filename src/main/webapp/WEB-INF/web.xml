@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>Expenser</display-name>
-
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -10,7 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-
   <servlet>
     <description>Displays login page</description>
     <display-name>LoginController</display-name>
@@ -21,7 +19,6 @@
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/login.htm</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <description>Handle users authentication</description>
     <display-name>UserAuthentication</display-name>
@@ -32,7 +29,6 @@
     <servlet-name>UserAuthentication</servlet-name>
     <url-pattern>/authenticate.htm</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <description>Display user's home page</description>
     <display-name>HomeController</display-name>
@@ -43,5 +39,24 @@
     <servlet-name>HomeController</servlet-name>
     <url-pattern>/home.htm</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>UserRegister</display-name>
+    <servlet-name>UserRegister</servlet-name>
+    <servlet-class>com.expenser.UserRegister</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserRegister</servlet-name>
+    <url-pattern>/register.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Logout</display-name>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.expenser.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/logout.htm</url-pattern>
+  </servlet-mapping>
 </web-app>
