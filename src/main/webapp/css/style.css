@@ -10,7 +10,7 @@ a{
 }
 
 header,footer,#mainContent{
-    width: 800px;
+    width: 900px;
     margin: auto;
     padding: 20px 0px;
 }
@@ -58,6 +58,12 @@ nav ul li a:hover{
     background-color: #FFFFFF;
     color: #E53938;
 }
+
+.selectedTab{
+    background-color: #FFFFFF;
+    color: #E53938;
+}
+
 #mainContent{
     padding: 20px 0px;
     background-color: #F1F1F1;
@@ -92,9 +98,10 @@ nav ul li a:hover{
 
 #leftColumn,#rightColumn{
     display: table-cell;
-    width: 350px;
+    width: 450px;
     text-align: center;
     padding: 5px;
+
 }
 
 #leftColumn{
@@ -133,3 +140,30 @@ form a{
     font-size: 0.6em;
     padding: 5px;
 }
+
+
+/* All expenses */
+#leftColumn table,#rightColumn table{
+	width: 350px;
+	margin: auto;
+	text-align: left;
+}
+
+#leftColumn th,#rightColumn th{
+	font-weight: 300;
+	font-size: 0.9em;
+	padding-bottom: 3px;
+	border-bottom: 2px solid #000000;
+}
+
+#leftColumn td,#rightColumn td{
+	font-size: 0.8em;
+	padding: 3px 0;
+	border-bottom: 1px dotted #000000;
+}
+
+#leftColumn tr a,#rightColumn tr a{
+	color: #E53938;
+	text-align: center;
+}
+

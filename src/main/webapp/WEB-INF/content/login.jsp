@@ -12,12 +12,12 @@
 		<input type="text" name="username" value="rgodse"
 			placeholder="Username/Email" required> <input type="password"
 			name="password" value="abc123" placeholder="Password" required>
-		<input type="submit" value="Login"> <a href="#">Forgot
+		<input type="submit" value="Login"> <a id="forgotpassword" href="#">Forgot
 			password?</a>
 	</form>
 
-	<form method="post" action="dashboard.html">
-		<input id="verifyemail" type="verifyemail" name="userEmail" value=""
+	<form method="post" action="login.htm">
+		<input id="verifyemail" type="verifyemail" name="verifyemail" value=""
 			placeholder="Verify Email" required style="display: none;">
 	</form>
 </div>
