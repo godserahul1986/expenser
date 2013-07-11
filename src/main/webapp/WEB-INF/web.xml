@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.0"
-    	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    	 xmlns="http://java.sun.com/xml/ns/javaee"
-    	 xmlns:web="http://java.sun.com/xml/ns/javaee"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-    	 id="WebApp_ID"
-		 metadata-complete="false">
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" metadata-complete="false" version="3.0">
   <display-name>Expenser</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -85,5 +78,35 @@
   <servlet-mapping>
     <servlet-name>AllExpensesController</servlet-name>
     <url-pattern>/allexpenses.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SettingsController</display-name>
+    <servlet-name>SettingsController</servlet-name>
+    <servlet-class>com.expenser.SettingsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SettingsController</servlet-name>
+    <url-pattern>/settings.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditProfileController</display-name>
+    <servlet-name>EditProfileController</servlet-name>
+    <servlet-class>com.expenser.EditProfileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditProfileController</servlet-name>
+    <url-pattern>/editprofile.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChangePasswordController</display-name>
+    <servlet-name>ChangePasswordController</servlet-name>
+    <servlet-class>com.expenser.ChangePasswordController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePasswordController</servlet-name>
+    <url-pattern>/changepassword.htm</url-pattern>
   </servlet-mapping>
 </web-app>
