@@ -92,7 +92,6 @@ nav ul li a:hover{
 }
 
 #mainContent p{
-    font-size: 0.9em;
     padding: 10px;
 }
 
@@ -102,6 +101,17 @@ nav ul li a:hover{
     text-align: center;
     padding: 5px;
 
+}
+
+.errorBox{
+    text-align:center;
+    font-size: 0.7em;
+    color: #FF0000;
+}
+
+.messageBox{
+    font-size: 1.5em;
+    color: #c231b2;
 }
 
 #leftColumn{
