@@ -7,10 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.expenser.common.Constants;
-
 /**
- * Servlet implementation class Logout
+ * Class Logout clears the current session
  */
 public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,9 +25,8 @@ public class Logout extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getSession().removeAttribute("userId");
-		request.getRequestDispatcher(Constants.PATH_CONTENT + "/login.jsp").forward(request, response);
-		System.out.println();
+		request.getSession(false).invalidate();
+		response.sendRedirect("login.htm");
 	}
 
 }

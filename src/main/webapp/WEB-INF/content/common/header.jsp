@@ -1,5 +1,5 @@
 <%
-	String userId = (String) request.getSession().getAttribute("userId");
+	Long userId = (Long) request.getSession().getAttribute("userId");
 	String userFullname = (String) request.getSession().getAttribute("userFullname");
 	String userEmail = (String) request.getSession().getAttribute("userEmail");
 	String error = (String) request.getAttribute("error");

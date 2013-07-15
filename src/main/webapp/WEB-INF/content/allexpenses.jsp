@@ -7,27 +7,29 @@
 <%@ include file="/WEB-INF/content/common/header.jsp"%>
 
 <div id="leftColumn">
-	<h3><% out.write((userId != null)?"You":""); %> Owe To</h3>
+	<h3>You Owe To</h3>
 	<p class="errorBox">
 		<% if(error != null && !error.isEmpty()) { out.write(error); } %>
 	</p>
 	<table  id="expenseOwe">
 		<tr>
+			<th>To?</th>
 			<th>What for?</th>
-			<th>How much?</th>
-			<th>Who Paid?</th>
-			<th>Settled?</th>
+			<th>Amount?</th>
+			<th>Date</th>
+			<th>Settle</th>
 		</tr>
 		<%
-			List<ExpensesDetail> expensesOwe = (ArrayList<ExpensesDetail>) request.getSession().getValue("expensesOwe");
+			List<ExpensesDetail> expensesOwe = (ArrayList<ExpensesDetail>) request.getAttribute("expensesOwe");
 			for (ExpensesDetail ed : expensesOwe) {
 				out.write("<tr>");
-				out.write("<td>"+ ed.getExpenseDesc() +"</td>");
 				out.write("<td>"+ ed.getFullName() +"</td>");
-				out.write("<td>"+ ed.getExpenseShareAmount() +"</td>");
+				out.write("<td>"+ ed.getExpenseDesc() +"</td>");
+				out.write("<td>"+ ed.getExpenseDate() +"</td>");
+				out.write("<td>&#36;"+ ed.getExpenseShareAmount() +"</td>");
+				out.write("<td><button>Settle</button></td>");
 				out.write("<input type='hidden' name='expense_id' value"+ ed.getExpenseId() +">");
 				out.write("<input type='hidden' name='paid_by_for_id' value"+ ed.getPaidByOrFor() +">");
-				out.write("<td><button>Settle</button></td>");
 				out.write("</tr>");
 			}
 		%>
@@ -36,27 +38,29 @@
 
 </div>
 <div id="rightColumn">
-	<h3><% out.write((userId != null)?"You":""); %> Get From</h3>
+	<h3>You Get From</h3>
 	<p class="errorBox">
 		<% if(error != null && !error.isEmpty()) { out.write(error); } %>
 	</p>
 	<table id="expenseGet">
 		<tr>
+			<th>From?</th>
 			<th>What for?</th>
-			<th>How much?</th>
-			<th>Who Shared?</th>
-			<th>Settled?</th>
+			<th>Date</th>
+			<th>Amount?</th>
+			<th>Settle</th>
 		</tr>
 		<%
-			List<ExpensesDetail> expensesGet = (ArrayList<ExpensesDetail>) request.getSession().getValue("expensesGet");
+			List<ExpensesDetail> expensesGet = (ArrayList<ExpensesDetail>) request.getAttribute("expensesGet");
 			for (ExpensesDetail ed : expensesGet) {
 				out.write("<tr>");
-				out.write("<td>"+ ed.getExpenseDesc() +"</td>");
 				out.write("<td>"+ ed.getFullName() +"</td>");
-				out.write("<td>"+ ed.getExpenseShareAmount() +"</td>");
+				out.write("<td>"+ ed.getExpenseDesc() +"</td>");
+				out.write("<td>"+ ed.getExpenseDate() +"</td>");
+				out.write("<td>&#36;"+ ed.getExpenseShareAmount() +"</td>");
+				out.write("<td><button>Settle</button></td>");
 				out.write("<input type='hidden' name='expense_id' value"+ ed.getExpenseId() +">");
 				out.write("<input type='hidden' name='paid_by_for_id' value"+ ed.getPaidByOrFor() +">");
-				out.write("<td><button>Settle</button></td>");
 				out.write("</tr>");
 			}
 		%>

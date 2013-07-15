@@ -26,7 +26,7 @@ public class Database {
 
 			// old school style
 			//Class.forName("com.mysql.jdbc.Driver");
-			//connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenser", "expenser", "exp3ns3r");
+			//connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "username", "password");
 		} catch (SQLException e) {
 			System.err.println("Database connection error (SQLException), " + e.getMessage());
 		} catch (NamingException e) {

@@ -48,7 +48,7 @@ public class UserAuthentication extends HttpServlet {
 
 			while (rs.next()) {
 				if (rs.getString("username").equals(username) && rs.getString("passwd").equals(password)) {
-					request.getSession().setAttribute("userId", rs.getString("id"));
+					request.getSession().setAttribute("userId", rs.getLong("id"));
 					request.getSession().setAttribute("username", rs.getString("username"));
 					request.getSession().setAttribute("userEmail", rs.getString("email"));
 					request.getSession().setAttribute("userFullname", rs.getString("fullname"));
