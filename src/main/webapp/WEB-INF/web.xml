@@ -29,6 +29,16 @@
     <servlet-name>UserAuthentication</servlet-name>
     <url-pattern>/authenticate.htm</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>HomeController</display-name>
+    <servlet-name>HomeController</servlet-name>
+    <servlet-class>com.expenser.HomeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeController</servlet-name>
+    <url-pattern>/home.htm</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description>Display user's dashboard</description>
     <display-name>DashboardController</display-name>
